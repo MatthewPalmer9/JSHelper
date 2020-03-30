@@ -28,7 +28,7 @@ function fetchBooks() {
     // passes the returned JSON data as an argument renderBooks(json)
 }
 
-// For concepts below, please check
+// For concepts below, please check the DOM Manipulation File in this Repo (To-Be Added)
 function renderBooks(json) {
   const main = document.querySelector('main')
   json.forEach(book => {
