@@ -6,7 +6,7 @@ google.com because:
 		1. Google demands the fetch request be from https
 		2. open-notify's API blocks the request outside of their website
 
-```javascript 
+```javascript
 fetch('http://api.open-notify.org/astros.json')
 .then(function(response) {
   return response.json();
