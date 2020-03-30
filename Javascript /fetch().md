@@ -43,3 +43,32 @@ document.addEventListener('DOMContentLoaded', function() {
   // This makes such fetchBooks() is only run after the DOM has fully loaded
 })
 ```
+
+## Here is a more complex use of fetch (EXAMPLE):
+
+```javascript
+function getImages(){
+    const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
+
+    return fetch(imgUrl)
+    .then(resp => resp.json())
+    .then(json => renderImages(json));
+}
+
+function renderImages(json){
+    let imgBox = document.querySelector("div#dog-image-container");
+    // ^ The above assumes you have a <div id="dog-image-container"></div> inside of your index.html
+    json.message.forEach(image_url => {
+        imgTag = document.createElement("img");
+        imgTag.setAttribute("src", `${image_url}`);
+        imgBox.appendChild(imgTag);
+    });
+}
+
+// THIS RUNS FIRST
+// Translation: "When the DOM is fully loaded => Run event (e) which is `getImages();`"
+document.addEventListener("DOMContentLoaded", (e) => {
+    getImages();
+});
+
+```
