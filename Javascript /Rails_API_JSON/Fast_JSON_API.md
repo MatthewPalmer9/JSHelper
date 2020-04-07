@@ -398,7 +398,7 @@ In using Fast JSON API though, we lose the ability to design the structure of
 our JSON data. **THIS IS UNTRUE** 
 
 ```ruby
-# Use .json(:except => []) to control the design structure
+# Use .to_json(:except => []) to control the design structure
 render json: SightingSerializer.new(sighting).to_json(:except => [:updated_at, :created_at])
 ```
 
